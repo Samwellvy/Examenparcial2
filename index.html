@@ -7,21 +7,23 @@
 <link href="css/framework7.bundle.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/><br>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/6.0.3/css/framework7.min.css">
+    <!-- Framework7 Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/6.0.3/css/framework7-icons.min.css">
+    <!-- Custom CSS -->
  <style>
-        /* Container for the images */
-        .image-container {
-            width: 30%; /* Adjust the width as needed */
-            max-width: 40px; /* Set the maximum width for the container */
-            margin: 0 auto; /* Center the container horizontally */
+        /* Style the image container */
+        .swiper-slide .image-container {
+            border: 2px solid #ccc; /* Add a border to the image container */
+            padding: 10px; /* Add some padding */
+            text-align: center; /* Center the image within the container */
         }
 
-        /* Style the images to fit within the container */
-        .image-container img {
+        /* Style the images to fit within their containers */
+        .swiper-slide .image-container img {
             max-width: 100%; /* Make the image fit within its container */
             height: auto; /* Maintain the aspect ratio */
-            display: block; /* Remove any extra spacing below the image */
-            margin: 0 auto; /* Center the image horizontally within the container */
         }
     </style>
 </head>
@@ -61,7 +63,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/home/" class="item-content panel-close">
+							<a href="/consolas/" class="item-content panel-close">
 								<div class="item-media">
 									<span class="material-symbols-outlined">stadia_controller</span>
 								</div>
@@ -192,12 +194,24 @@
 				  <div class="block-title">Juegos Destacados</div>
 				  <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="img/castlevania-cotm.jpg" alt="Image 1"></div>
-                        <div class="swiper-slide"><img src="img/3ds_mariokart7.jpg" alt="Image 2"></div>
-                        <div class="swiper-slide"><img src="img/3ds_fantasylife.jpg" alt="Image 3"></div>
+                        <div class="swiper-slide">
+                            <div class="image-container">
+                                <img src="img/castlevania-cotm.jpg" alt="Image 1">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image-container">
+                                <img src="img/zelda-theminishcap.jpg" alt="Image 2">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image-container">
+                                <img src="img/3ds_fantasylife.jpg" alt="Image 3">
+                            </div>
+                        </div>
                         <!-- Add more images here -->
                     </div>
-				   <div class="swiper-pagination"></div>
+					  <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
 				  </div>
@@ -216,7 +230,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/framework7/6.0.3/js/framework7.min.js"></script>
     <!-- Swiper JS (for the carousel) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.0/swiper-bundle.min.js"></script>
-    <!-- Your custom app scripts -->
     <script>
         // Initialize app
         var app = new Framework7({
@@ -230,7 +243,7 @@
             },
         });
 
-        // Initialize Swiper
+        // Initialize Swiper with auto-play enabled
         var swiper = new Swiper('.swiper-container', {
             // Optional parameters
             loop: true, // Enable continuous loop
